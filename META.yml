@@ -1,0 +1,23 @@
+---
+abstract: ~
+author:
+  - 'This distribution was extracted from the L<Reaction> code base by Guillermo'
+build_requires:
+  Test::More: 0.62
+distribution_type: module
+generated_by: 'Module::Install version 0.78'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: MooseX-Types-Common
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Moose: 0.39
+  MooseX::Types: 0.04
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.001000
