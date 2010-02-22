@@ -4,6 +4,7 @@ author:
   - 'This distribution was extracted from the L<Reaction> code base by Guillermo'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Test::Exception: 0
   Test::More: 0.62
 configure_requires:
   ExtUtils::MakeMaker: 6.42
@@ -25,4 +26,4 @@ resources:
   IRC: irc://irc.perl.org/#moose
   license: http://dev.perl.org/licenses/
   repository: git://git.moose.perl.org/MooseX-Types-Common.git
-version: 0.001001
+version: 0.001002
