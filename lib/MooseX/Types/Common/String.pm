@@ -3,11 +3,12 @@ package MooseX::Types::Common::String;
 use strict;
 use warnings;
 
-our $VERSION = '0.001004';
+our $VERSION = '0.001005';
 
 use MooseX::Types -declare => [
   qw(SimpleStr
      NonEmptySimpleStr
+     NumericCode
      LowerCaseSimpleStr
      UpperCaseSimpleStr
      Password
@@ -42,6 +43,18 @@ subtype NonEmptySimpleStr,
         }
         : ()
     );
+
+subtype NumericCode,
+  as NonEmptySimpleStr,
+  where { $_ =~ m/^[0-9]+$/ },
+  message {
+    'Must be a non-empty single line of no more than 255 chars that consists '
+	. 'of numeric characters only'
+  };
+
+coerce NumericCode,
+  from NonEmptySimpleStr,
+  via { my $code = $_; $code =~ s/[[:punct:]]//g; return $code };
 
 subtype Password,
   as NonEmptySimpleStr,
@@ -202,6 +215,13 @@ A Str with length > 0 and all uppercase characters.
 A coercion exists via C<uc> from NonEmptyStr
 
 =back
+
+=item * NumericCode
+
+A Str with no new-line characters that consists of only Numeric characters.
+Examples include, Social Security Numbers, PINs, Postal Codes, HTTP Status
+Codes, etc. Supports attempting to coerce from a string that has punctuation
+in it ( e.g credit card number 4111-1111-1111-1111 ).
 
 =head1 SEE ALSO
 
