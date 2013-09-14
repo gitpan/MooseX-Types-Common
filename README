@@ -1,49 +1,13 @@
-NAME
-    MooseX::Types::Common - A library of commonly used type constraints
-
-SYNOPSIS
-        use MooseX::Types::Common::String qw/SimpleStr/;
-        has short_str => (is => 'rw', isa => SimpleStr);
-
-        ...
-        #this will fail
-        $object->short_str("string\nwith\nbreaks");
 
 
+This archive contains the distribution MooseX-Types-Common,
+version 0.001009:
 
-        use MooseX::Types::Common::Numeric qw/PositiveInt/;
-        has count => (is => 'rw', isa => PositiveInt);
+  A library of commonly used type constraints
 
-        ...
-        #this will fail
-        $object->count(-33);
+This software is copyright (c) 2013 by Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>).
 
-DESCRIPTION
-    A set of commonly-used type constraints that do not ship with Moose by
-    default.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
-SEE ALSO
-    *   MooseX::Types::Common::String
-
-    *   MooseX::Types::Common::Numeric
-
-    *   MooseX::Types
-
-    *   Moose::Util::TypeConstraints
-
-AUTHORS
-    This distribution was extracted from the Reaction code base by Guillermo
-    Roditi (groditi).
-
-    The original authors of this library are:
-
-    *   Matt S. Trout
-
-    *   K. J. Cheetham
-
-    *   Guillermo Roditi
-
-LICENSE
-    This library is free software, you can redistribute it and/or modify it
-    under the same terms as Perl itself.
 

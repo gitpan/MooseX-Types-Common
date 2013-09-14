@@ -1,9 +1,14 @@
 package MooseX::Types::Common::Numeric;
+BEGIN {
+  $MooseX::Types::Common::Numeric::AUTHORITY = 'cpan:GRODITI';
+}
+{
+  $MooseX::Types::Common::Numeric::VERSION = '0.001009';
+}
+# ABSTRACT: Commonly used numeric types
 
 use strict;
 use warnings;
-
-our $VERSION = '0.001008';
 
 use MooseX::Types -declare => [
   qw(PositiveNum PositiveOrZeroNum
@@ -112,24 +117,35 @@ subtype NegativeOrZeroInt,
     );
 
 subtype SingleDigit,
-  as PositiveInt,
-  where { $_ <= 9 },
+  as Int,
+  where { $_ >= -9 and $_ <= 9 },
   message { "Must be a single digit" },
     ( $Moose::VERSION >= 2.0200
         ? inline_as {
             $_[0]->parent()->_inline_check( $_[1] ) . ' && '
-                . qq{ ($_[1] <= 9) };
+                . qq{ ($_[1] >= -9 and $_[1] <= 9) };
         }
         : ()
     );
 
 1;
 
-__END__;
+__END__
+
+=pod
+
+=encoding utf-8
+
+=for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
+(L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
 
 =head1 NAME
 
 MooseX::Types::Common::Numeric - Commonly used numeric types
+
+=head1 VERSION
+
+version 0.001009
 
 =head1 SYNOPSIS
 
@@ -147,23 +163,23 @@ default.
 
 =over
 
-=item * PositiveNum
+=item * C<PositiveNum>
 
-=item * PositiveOrZeroNum
+=item * C<PositiveOrZeroNum>
 
-=item * PositiveInt
+=item * C<PositiveInt>
 
-=item * PositiveOrZeroInt
+=item * C<PositiveOrZeroInt>
 
-=item * NegativeNum
+=item * C<NegativeNum>
 
-=item * NegativeOrZeroNum
+=item * C<NegativeOrZeroNum>
 
-=item * NegativeInt
+=item * C<NegativeInt>
 
-=item * NegativeOrZeroInt
+=item * C<NegativeOrZeroInt>
 
-=item * SingleDigit
+=item * C<SingleDigit>
 
 =back
 
@@ -177,6 +193,27 @@ default.
 
 =head1 AUTHORS
 
-Please see:: L<MooseX::Types::Common>
+=over 4
+
+=item *
+
+Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>)
+
+=item *
+
+K. James Cheetham <jamie@shadowcatsystems.co.uk>
+
+=item *
+
+Guillermo Roditi <groditi@gmail.com>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>).
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

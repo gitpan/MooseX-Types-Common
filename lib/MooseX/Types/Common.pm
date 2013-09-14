@@ -1,13 +1,20 @@
 package MooseX::Types::Common;
+BEGIN {
+  $MooseX::Types::Common::AUTHORITY = 'cpan:GRODITI';
+}
+{
+  $MooseX::Types::Common::VERSION = '0.001009';
+}
+# git description: v0.001008-12-g5d200f1
+
+# ABSTRACT: A library of commonly used type constraints
 
 use strict;
 use warnings;
 use Carp qw/cluck/;
 
-our $VERSION = '0.001008';
-
 sub import {
-    my $package = shift;
+    my $self = shift;
     return unless @_;
     cluck("Tried to import the symbols " . join(', ', @_)
         . " from MooseX::Types::Common.\nDid you mean "
@@ -16,9 +23,23 @@ sub import {
 
 1;
 
+__END__
+
+=pod
+
+=encoding utf-8
+
+=for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
+(L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
+Dave Rolsky Justin Hunter Karen Etheridge Toby Inkster Tomas Doran
+
 =head1 NAME
 
 MooseX::Types::Common - A library of commonly used type constraints
+
+=head1 VERSION
+
+version 0.001009
 
 =head1 SYNOPSIS
 
@@ -28,7 +49,6 @@ MooseX::Types::Common - A library of commonly used type constraints
     ...
     #this will fail
     $object->short_str("string\nwith\nbreaks");
-
 
 
     use MooseX::Types::Common::Numeric qw/PositiveInt/;
@@ -56,26 +76,60 @@ A set of commonly-used type constraints that do not ship with Moose by default.
 
 =back
 
-=head1 AUTHORS
+=head1 ORIGIN
 
 This distribution was extracted from the L<Reaction> code base by Guillermo
 Roditi (groditi).
 
-The original authors of this library are:
+=head1 AUTHORS
 
 =over 4
 
-=item * Matt S. Trout
+=item *
 
-=item * K. J. Cheetham
+Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>)
 
-=item * Guillermo Roditi
+=item *
+
+K. James Cheetham <jamie@shadowcatsystems.co.uk>
+
+=item *
+
+Guillermo Roditi <groditi@gmail.com>
 
 =back
 
-=head1 LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-This library is free software, you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This software is copyright (c) 2013 by Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>).
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Justin Hunter <justin.d.hunter@gmail.com>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Toby Inkster <tobyink@cpan.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =cut

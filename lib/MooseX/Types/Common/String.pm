@@ -1,9 +1,14 @@
 package MooseX::Types::Common::String;
+BEGIN {
+  $MooseX::Types::Common::String::AUTHORITY = 'cpan:GRODITI';
+}
+{
+  $MooseX::Types::Common::String::VERSION = '0.001009';
+}
+# ABSTRACT:  Commonly used string types
 
 use strict;
 use warnings;
-
-our $VERSION = '0.001008';
 
 use MooseX::Types -declare => [
   qw(SimpleStr
@@ -94,12 +99,12 @@ subtype NonEmptyStr,
 
 subtype LowerCaseStr,
   as NonEmptyStr,
-  where { !/[A-Z]/ms },
+  where { !/\p{Upper}/ms },
   message { "Must not contain upper case letters" },
     ( $Moose::VERSION >= 2.0200
         ? inline_as {
             $_[0]->parent()->_inline_check( $_[1] ) . ' && '
-                . qq{ ( $_[1] !~ /[A-Z]/ms ) };
+                . qq{ ( $_[1] !~ /\\p{Upper}/ms ) };
         }
         : ()
     );
@@ -110,12 +115,12 @@ coerce LowerCaseStr,
 
 subtype UpperCaseStr,
   as NonEmptyStr,
-  where { !/[a-z]/ms },
+  where { !/\p{Lower}/ms },
   message { "Must not contain lower case letters" },
     ( $Moose::VERSION >= 2.0200
         ? inline_as {
             $_[0]->parent()->_inline_check( $_[1] ) . ' && '
-                . qq{ ( $_[1] !~ m/[a-z]/ms ) };
+                . qq{ ( $_[1] !~ /\\p{Lower}/ms ) };
         }
         : ()
     );
@@ -126,28 +131,28 @@ coerce UpperCaseStr,
 
 subtype LowerCaseSimpleStr,
   as NonEmptySimpleStr,
-  where { !/[A-Z]/ },
+  where { !/\p{Upper}/ },
   message { "Must not contain upper case letters" },
     ( $Moose::VERSION >= 2.0200
         ? inline_as {
             $_[0]->parent()->_inline_check( $_[1] ) . ' && '
-                . qq{ ( $_[1] !~ m/[A-Z]/ ) };
+                . qq{ ( $_[1] !~ /\\p{Upper}/ ) };
         }
         : ()
     );
-  
+
 coerce LowerCaseSimpleStr,
   from NonEmptySimpleStr,
   via { lc };
 
 subtype UpperCaseSimpleStr,
   as NonEmptySimpleStr,
-  where { !/[a-z]/ },
+  where { !/\p{Lower}/ },
   message { "Must not contain lower case letters" },
     ( $Moose::VERSION >= 2.0200
         ? inline_as {
             $_[0]->parent()->_inline_check( $_[1] ) . ' && '
-                . qq{ ( $_[1] !~ m/[a-z]/ ) };
+                . qq{ ( $_[1] !~ /\\p{Lower}/ ) };
         }
         : ()
     );
@@ -158,9 +163,22 @@ coerce UpperCaseSimpleStr,
 
 1;
 
+__END__
+
+=pod
+
+=encoding utf-8
+
+=for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
+(L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
+
 =head1 NAME
 
 MooseX::Types::Common::String - Commonly used string types
+
+=head1 VERSION
+
+version 0.001009
 
 =head1 SYNOPSIS
 
@@ -178,46 +196,46 @@ default.
 
 =over
 
-=item * SimpleStr
+=item * C<SimpleStr>
 
-A Str with no new-line characters.
+A C<Str> with no new-line characters.
 
-=item * NonEmptySimpleStr
+=item * C<NonEmptySimpleStr>
 
-A Str with no new-line characters and length > 0
+A C<Str> with no new-line characters and length > 0
 
-=item * LowerCaseSimpleStr
+=item * C<LowerCaseSimpleStr>
 
-A Str with no new-line characters, length > 0 and no uppercase characters
-A coercion exists via C<lc> from NonEmptySimpleStr
+A C<Str> with no new-line characters, length > 0 and no uppercase characters
+A coercion exists via C<lc> from C<NonEmptySimpleStr>
 
-=item * UpperCaseSimpleStr
+=item * C<UpperCaseSimpleStr>
 
-A Str with no new-line characters, length > 0 and no lowercase characters
-A coercion exists via C<uc> from NonEmptySimpleStr
+A C<Str> with no new-line characters, length > 0 and no lowercase characters
+A coercion exists via C<uc> from C<NonEmptySimpleStr>
 
-=item * Password
+=item * C<Password>
 
-=item * StrongPassword
+=item * C<StrongPassword>
 
-=item * NonEmptyStr
+=item * C<NonEmptyStr>
 
-A Str with length > 0
+A C<Str> with length > 0
 
-=item * LowerCaseStr
+=item * C<LowerCaseStr>
 
-A Str with length > 0 and no uppercase characters.
-A coercion exists via C<lc> from NonEmptyStr
+A C<Str> with length > 0 and no uppercase characters.
+A coercion exists via C<lc> from C<NonEmptyStr>
 
-=item * UpperCaseStr
+=item * C<UpperCaseStr>
 
-A Str with length > 0 and no lowercase characters.
-A coercion exists via C<uc> from NonEmptyStr
+A C<Str> with length > 0 and no lowercase characters.
+A coercion exists via C<uc> from C<NonEmptyStr>
 
-=item * NumericCode
+=item * C<NumericCode>
 
-A Str with no new-line characters that consists of only Numeric characters.
-Examples include, Social Security Numbers, PINs, Postal Codes, HTTP Status
+A C<Str> with no new-line characters that consists of only Numeric characters.
+Examples include, Social Security Numbers, Personal Identification Numbers, Postal Codes, HTTP Status
 Codes, etc. Supports attempting to coerce from a string that has punctuation
 in it ( e.g credit card number 4111-1111-1111-1111 ).
 
@@ -233,6 +251,27 @@ in it ( e.g credit card number 4111-1111-1111-1111 ).
 
 =head1 AUTHORS
 
-Please see:: L<MooseX::Types::Common>
+=over 4
+
+=item *
+
+Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>)
+
+=item *
+
+K. James Cheetham <jamie@shadowcatsystems.co.uk>
+
+=item *
+
+Guillermo Roditi <groditi@gmail.com>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Matt S Trout - mst (at) shadowcatsystems.co.uk (L<http://www.shadowcatsystems.co.uk/>).
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
