@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Types::Common::String::AUTHORITY = 'cpan:GRODITI';
 }
 {
-  $MooseX::Types::Common::String::VERSION = '0.001009';
+  $MooseX::Types::Common::String::VERSION = '0.001010';
 }
 # ABSTRACT:  Commonly used string types
 
@@ -54,7 +54,7 @@ subtype NumericCode,
   where { $_ =~ m/^[0-9]+$/ },
   message {
     'Must be a non-empty single line of no more than 255 chars that consists '
-	. 'of numeric characters only'
+        . 'of numeric characters only'
   };
 
 coerce NumericCode,
@@ -171,6 +171,8 @@ __END__
 
 =for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
 (L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
+Dave Tomas Doran Rolsky Graham Knop Justin Hunter Karen Etheridge Toby
+Inkster
 
 =head1 NAME
 
@@ -178,7 +180,7 @@ MooseX::Types::Common::String - Commonly used string types
 
 =head1 VERSION
 
-version 0.001009
+version 0.001010
 
 =head1 SYNOPSIS
 

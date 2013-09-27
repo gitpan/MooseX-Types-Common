@@ -5,6 +5,7 @@ LICENSE
 MANIFEST
 META.json
 META.yml
+Makefile.PL
 README
 dist.ini
 lib/MooseX/Types/Common.pm
@@ -12,6 +13,7 @@ lib/MooseX/Types/Common/Numeric.pm
 lib/MooseX/Types/Common/String.pm
 t/00-check-deps.t
 t/00-compile.t
+t/00-report-prereqs.t
 t/01-string.t
 t/02-numeric.t
 t/03-idiot.t

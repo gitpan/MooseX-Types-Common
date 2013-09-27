@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Types::Common::Numeric::AUTHORITY = 'cpan:GRODITI';
 }
 {
-  $MooseX::Types::Common::Numeric::VERSION = '0.001009';
+  $MooseX::Types::Common::Numeric::VERSION = '0.001010';
 }
 # ABSTRACT: Commonly used numeric types
 
@@ -145,7 +145,7 @@ MooseX::Types::Common::Numeric - Commonly used numeric types
 
 =head1 VERSION
 
-version 0.001009
+version 0.001010
 
 =head1 SYNOPSIS
 

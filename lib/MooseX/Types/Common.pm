@@ -3,9 +3,9 @@ BEGIN {
   $MooseX::Types::Common::AUTHORITY = 'cpan:GRODITI';
 }
 {
-  $MooseX::Types::Common::VERSION = '0.001009';
+  $MooseX::Types::Common::VERSION = '0.001010';
 }
-# git description: v0.001008-12-g5d200f1
+# git description: v0.001009-6-gfb387f3
 
 # ABSTRACT: A library of commonly used type constraints
 
@@ -31,7 +31,8 @@ __END__
 
 =for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
 (L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
-Dave Rolsky Justin Hunter Karen Etheridge Toby Inkster Tomas Doran
+Dave Tomas Doran Rolsky Graham Knop Justin Hunter Karen Etheridge Toby
+Inkster
 
 =head1 NAME
 
@@ -39,7 +40,7 @@ MooseX::Types::Common - A library of commonly used type constraints
 
 =head1 VERSION
 
-version 0.001009
+version 0.001010
 
 =head1 SYNOPSIS
 
@@ -113,6 +114,10 @@ the same terms as the Perl 5 programming language system itself.
 =item *
 
 Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Graham Knop <haarg@haarg.org>
 
 =item *
 
