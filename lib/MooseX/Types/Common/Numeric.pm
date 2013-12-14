@@ -1,9 +1,9 @@
 package MooseX::Types::Common::Numeric;
+{
+  $MooseX::Types::Common::Numeric::VERSION = '0.001011';
+}
 BEGIN {
   $MooseX::Types::Common::Numeric::AUTHORITY = 'cpan:GRODITI';
-}
-{
-  $MooseX::Types::Common::Numeric::VERSION = '0.001010';
 }
 # ABSTRACT: Commonly used numeric types
 
@@ -19,6 +19,7 @@ use MooseX::Types -declare => [
 ];
 
 use MooseX::Types::Moose qw/Num Int/;
+use namespace::autoclean;
 
 subtype PositiveNum,
   as Num,
@@ -134,10 +135,12 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
 (L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
+Caleb Toby Inkster Tomas Doran Cushing Dave Rolsky Graham Knop Justin
+Hunter Karen Etheridge
 
 =head1 NAME
 
@@ -145,7 +148,7 @@ MooseX::Types::Common::Numeric - Commonly used numeric types
 
 =head1 VERSION
 
-version 0.001010
+version 0.001011
 
 =head1 SYNOPSIS
 

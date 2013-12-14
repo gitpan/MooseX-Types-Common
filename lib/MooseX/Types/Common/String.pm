@@ -1,9 +1,9 @@
 package MooseX::Types::Common::String;
+{
+  $MooseX::Types::Common::String::VERSION = '0.001011';
+}
 BEGIN {
   $MooseX::Types::Common::String::AUTHORITY = 'cpan:GRODITI';
-}
-{
-  $MooseX::Types::Common::String::VERSION = '0.001010';
 }
 # ABSTRACT:  Commonly used string types
 
@@ -24,6 +24,7 @@ use MooseX::Types -declare => [
 ];
 
 use MooseX::Types::Moose qw/Str/;
+use namespace::autoclean;
 
 subtype SimpleStr,
   as Str,
@@ -167,12 +168,12 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
 (L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
-Dave Tomas Doran Rolsky Graham Knop Justin Hunter Karen Etheridge Toby
-Inkster
+Caleb Toby Inkster Tomas Doran Cushing Dave Rolsky Graham Knop Justin
+Hunter Karen Etheridge
 
 =head1 NAME
 
@@ -180,7 +181,7 @@ MooseX::Types::Common::String - Commonly used string types
 
 =head1 VERSION
 
-version 0.001010
+version 0.001011
 
 =head1 SYNOPSIS
 

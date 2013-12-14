@@ -22,6 +22,9 @@ jamie
 Guillermo
 Roditi
 groditi
+Caleb
+Cushing
+xenoterracide
 Dave
 Rolsky
 autarch
@@ -44,5 +47,5 @@ lib
 MooseX
 Types
 Common
-Numeric
 String
+Numeric

@@ -1,17 +1,18 @@
 package MooseX::Types::Common;
+{
+  $MooseX::Types::Common::VERSION = '0.001011';
+}
+# git description: v0.001010-10-g53965ad
+
 BEGIN {
   $MooseX::Types::Common::AUTHORITY = 'cpan:GRODITI';
 }
-{
-  $MooseX::Types::Common::VERSION = '0.001010';
-}
-# git description: v0.001009-6-gfb387f3
-
 # ABSTRACT: A library of commonly used type constraints
 
 use strict;
 use warnings;
 use Carp qw/cluck/;
+use namespace::autoclean;
 
 sub import {
     my $self = shift;
@@ -27,12 +28,12 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Matt S Trout - mst (at) shadowcatsystems.co.uk
 (L<http://www.shadowcatsystems.co.uk/>) K. James Cheetham Guillermo Roditi
-Dave Tomas Doran Rolsky Graham Knop Justin Hunter Karen Etheridge Toby
-Inkster
+Caleb Toby Inkster Tomas Doran Cushing Dave Rolsky Graham Knop Justin
+Hunter Karen Etheridge
 
 =head1 NAME
 
@@ -40,7 +41,7 @@ MooseX::Types::Common - A library of commonly used type constraints
 
 =head1 VERSION
 
-version 0.001010
+version 0.001011
 
 =head1 SYNOPSIS
 
@@ -110,6 +111,10 @@ the same terms as the Perl 5 programming language system itself.
 =head1 CONTRIBUTORS
 
 =over 4
+
+=item *
+
+Caleb Cushing <xenoterracide@gmail.com>
 
 =item *
 
