@@ -7,8 +7,8 @@ use warnings;
 
 BEGIN {
 my %configure_requires = (
-    'Module::Build::Tiny' => '0.030',
     'ExtUtils::MakeMaker' => '6.30',
+    'Module::Build::Tiny' => '0.030',
 );
 
 my @missing = grep {
@@ -82,7 +82,6 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
-    "namespace::autoclean" => 0,
     "strict" => 0,
     "warnings" => 0
   },
@@ -97,7 +96,7 @@ my %WriteMakefileArgs = (
     "open" => 0,
     "utf8" => 0
   },
-  "VERSION" => "0.001011",
+  "VERSION" => "0.001012",
   "test" => {
     "TESTS" => "t/*.t"
   }

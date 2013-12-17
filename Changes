@@ -1,5 +1,9 @@
 Revision history for MooseX-Types-Common
 
+0.001012  2013-12-17 23:09:36Z
+  - fully-qualified type names like MooseX::Types::Common::String::SimpleStr
+    work again (removed in 0.001011)
+
 0.001011  2013-12-14 18:15:31Z
   - update configure_requires checking in Makefile.PL, add CONTRIBUTING file
 

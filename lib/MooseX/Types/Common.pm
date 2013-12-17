@@ -1,8 +1,8 @@
 package MooseX::Types::Common;
 {
-  $MooseX::Types::Common::VERSION = '0.001011';
+  $MooseX::Types::Common::VERSION = '0.001012';
 }
-# git description: v0.001010-10-g53965ad
+# git description: v0.001011-2-g23ccebf
 
 BEGIN {
   $MooseX::Types::Common::AUTHORITY = 'cpan:GRODITI';
@@ -12,7 +12,6 @@ BEGIN {
 use strict;
 use warnings;
 use Carp qw/cluck/;
-use namespace::autoclean;
 
 sub import {
     my $self = shift;
@@ -41,7 +40,7 @@ MooseX::Types::Common - A library of commonly used type constraints
 
 =head1 VERSION
 
-version 0.001011
+version 0.001012
 
 =head1 SYNOPSIS
 

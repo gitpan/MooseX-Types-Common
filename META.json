@@ -47,9 +47,9 @@
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "Pod::Coverage::TrustPod" : "0",
+            "Pod::Weaver::Section::Contributors" : "0",
             "Test::CPAN::Changes" : "0.19",
             "Test::CPAN::Meta" : "0",
-            "Test::CleanNamespaces" : "0",
             "Test::Kwalitee" : "1.12",
             "Test::More" : "0.94",
             "Test::NoTabs" : "0",
@@ -63,7 +63,6 @@
             "Carp" : "0",
             "MooseX::Types" : "0",
             "MooseX::Types::Moose" : "0",
-            "namespace::autoclean" : "0",
             "perl" : "5.008",
             "strict" : "0",
             "warnings" : "0"
@@ -90,15 +89,15 @@
    "provides" : {
       "MooseX::Types::Common" : {
          "file" : "lib/MooseX/Types/Common.pm",
-         "version" : "0.001011"
+         "version" : "0.001012"
       },
       "MooseX::Types::Common::Numeric" : {
          "file" : "lib/MooseX/Types/Common/Numeric.pm",
-         "version" : "0.001011"
+         "version" : "0.001012"
       },
       "MooseX::Types::Common::String" : {
          "file" : "lib/MooseX/Types/Common/String.pm",
-         "version" : "0.001011"
+         "version" : "0.001012"
       }
    },
    "release_status" : "stable",
@@ -116,7 +115,7 @@
       "x_IRC" : "irc://irc.perl.org/#moose",
       "x_MailingList" : "http://lists.perl.org/list/moose.html"
    },
-   "version" : "0.001011",
+   "version" : "0.001012",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019006"
@@ -246,7 +245,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::NoTabs",
-            "version" : "0.05"
+            "version" : "0.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",

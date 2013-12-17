@@ -25,7 +25,6 @@ my @modules = qw(
   Test::More
   Test::Warnings
   if
-  namespace::autoclean
   open
   perl
   strict

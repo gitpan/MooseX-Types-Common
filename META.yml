@@ -32,18 +32,17 @@ no_index:
 provides:
   MooseX::Types::Common:
     file: lib/MooseX/Types/Common.pm
-    version: 0.001011
+    version: 0.001012
   MooseX::Types::Common::Numeric:
     file: lib/MooseX/Types/Common/Numeric.pm
-    version: 0.001011
+    version: 0.001012
   MooseX::Types::Common::String:
     file: lib/MooseX/Types/Common/String.pm
-    version: 0.001011
+    version: 0.001012
 requires:
   Carp: 0
   MooseX::Types: 0
   MooseX::Types::Moose: 0
-  namespace::autoclean: 0
   perl: 5.008
   strict: 0
   warnings: 0
@@ -53,7 +52,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Types-Common
   homepage: https://github.com/moose/MooseX-Types-Common
   repository: https://github.com/moose/MooseX-Types-Common.git
-version: 0.001011
+version: 0.001012
 x_Dist_Zilla:
   perl:
     version: 5.019006
@@ -153,7 +152,7 @@ x_Dist_Zilla:
             - ':ExecFiles'
             - '@Author::ETHER/Examples'
       name: '@Author::ETHER/Test::NoTabs'
-      version: 0.05
+      version: 0.06
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::ETHER/EOLTests'

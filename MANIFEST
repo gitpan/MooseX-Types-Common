@@ -19,11 +19,11 @@ t/02-numeric.t
 t/03-idiot.t
 t/04-coerce.t
 t/05-unicode.t
+t/06-fully-qualified.t
 weaver.ini
 xt/author/00-compile.t
 xt/author/pod-spell.t
 xt/release/changes_has_content.t
-xt/release/clean-namespaces.t
 xt/release/cpan-changes.t
 xt/release/distmeta.t
 xt/release/eol.t

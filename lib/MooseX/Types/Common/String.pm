@@ -1,6 +1,6 @@
 package MooseX::Types::Common::String;
 {
-  $MooseX::Types::Common::String::VERSION = '0.001011';
+  $MooseX::Types::Common::String::VERSION = '0.001012';
 }
 BEGIN {
   $MooseX::Types::Common::String::AUTHORITY = 'cpan:GRODITI';
@@ -24,7 +24,6 @@ use MooseX::Types -declare => [
 ];
 
 use MooseX::Types::Moose qw/Str/;
-use namespace::autoclean;
 
 subtype SimpleStr,
   as Str,
@@ -181,7 +180,7 @@ MooseX::Types::Common::String - Commonly used string types
 
 =head1 VERSION
 
-version 0.001011
+version 0.001012
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package MooseX::Types::Common::Numeric;
 {
-  $MooseX::Types::Common::Numeric::VERSION = '0.001011';
+  $MooseX::Types::Common::Numeric::VERSION = '0.001012';
 }
 BEGIN {
   $MooseX::Types::Common::Numeric::AUTHORITY = 'cpan:GRODITI';
@@ -19,7 +19,6 @@ use MooseX::Types -declare => [
 ];
 
 use MooseX::Types::Moose qw/Num Int/;
-use namespace::autoclean;
 
 subtype PositiveNum,
   as Num,
@@ -148,7 +147,7 @@ MooseX::Types::Common::Numeric - Commonly used numeric types
 
 =head1 VERSION
 
-version 0.001011
+version 0.001012
 
 =head1 SYNOPSIS
 
